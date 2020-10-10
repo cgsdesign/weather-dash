@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="./weather-dash.css">
     </head>
+
     <body>
         <header>
             <h1>Weather Dash</h1>
@@ -22,11 +23,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="left-colomn col-md-3">
-                        <form id="enter-city"></form>
+                        <form id="enter-city">
                         <div class="form-group">
-                            <h4 for="formGroupExampleInput">City Name</h4>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City Name">
+                            <h4 for="city-name-input">City Name</h4>
+                            <input type="text" class="form-control" id="city-name-input" placeholder="City Name">
+                            <button>Enter</button>
                           </div>
+                        </form>
                         <ul id="city-list">
                             <!--past cities will go here-->
                         </ul>
@@ -46,53 +49,53 @@
 
                     <br><h2>5 Day Forcast</h2><br>
                     <div class="row five-day">
-                    <div id="day-1" class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div id="date"></div><br>
-                                <div class="temp"></div><br>
-                                <div class="hum"></div><br>
-                                <div class="uv"></div><br>                            
+                        <div id="day-1" class="card" style="width: 18rem;">
+                                <img src="./sunny.png" class="card-img-top">
+                                <div class="card-body">
+                                    <div id="date"></div><br>
+                                    <div class="temp"></div><br>
+                                    <div class="hum"></div><br>
+                                    <div class="uv"></div><br>                            
+                                </div>
                             </div>
-                        </div>
-                        <div id="day-2" class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div id="date"></div><br>
-                                <div class="temp"></div><br>
-                                <div class="hum"></div><br>
-                                <div class="uv"></div><br>                            
+                            <div id="day-2" class="card" style="width: 18rem;">
+                                <img src="./sunny.png" class="card-img-top">
+                                <div class="card-body">
+                                    <div id="date"></div><br>
+                                    <div class="temp"></div><br>
+                                    <div class="hum"></div><br>
+                                    <div class="uv"></div><br>                            
+                                </div>
                             </div>
-                        </div>
-                        <div id="day-3" class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div id="date"></div><br>
-                                <div class="temp"></div><br>
-                                <div class="hum"></div><br>
-                                <div class="uv"></div><br>                            
+                            <div id="day-3" class="card" style="width: 18rem;">
+                                <img src="./sunny.png" class="card-img-top">
+                                <div class="card-body">
+                                    <div id="date"></div><br>
+                                    <div class="temp"></div><br>
+                                    <div class="hum"></div><br>
+                                    <div class="uv"></div><br>                            
+                                </div>
                             </div>
-                        </div>
-                        <div id="day-4" class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div id="date"></div><br>
-                                <div class="temp"></div><br>
-                                <div class="hum"></div><br>
-                                <div class="uv"></div><br>                            
+                            <div id="day-4" class="card" style="width: 18rem;">
+                                <img src="./sunny.png" class="card-img-top">
+                                <div class="card-body">
+                                    <div id="date"></div><br>
+                                    <div class="temp"></div><br>
+                                    <div class="hum"></div><br>
+                                    <div class="uv"></div><br>                            
+                                </div>
                             </div>
-                        </div>
-                        <div id="day-5" class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <div id="date"></div><br>
-                                <div class="temp"></div><br>
-                                <div class="hum"></div><br>
-                                <div class="uv"></div><br>                            
+                            <div id="day-5" class="card" style="width: 18rem;">
+                                <img src="./sunny.png" class="card-img-top">
+                                <div class="card-body">
+                                    <div id="date"></div><br>
+                                    <div class="temp"></div><br>
+                                    <div class="hum"></div><br>
+                                    <div class="uv"></div><br>                            
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </main>

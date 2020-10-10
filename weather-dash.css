@@ -3,6 +3,10 @@ header {
     padding:20px;
 }
 
+.hide-toggle {
+    display: none;
+}
+
 .left-colomn {
     background:orange;
     padding-top:20px;
@@ -11,16 +15,20 @@ header {
 .left-colomn li{
     padding-top:20px;
 }
+
 .five-day {
     padding:20px;
 }
+
 .main-body{
     display:flex;
     flex-direction:column;
 }
+
 .current{
     padding:20px;
 }
+
 .card {
     display: flex;
     flex: 1;

@@ -1,0 +1,27 @@
+header {
+    background: lightgrey;
+    padding:20px;
+}
+
+.left-colomn {
+    background:orange;
+    padding-top:20px;
+}
+
+.left-colomn li{
+    padding-top:20px;
+}
+.five-day {
+    padding:20px;
+}
+.main-body{
+    display:flex;
+    flex-direction:column;
+}
+.current{
+    padding:20px;
+}
+.card {
+    display: flex;
+    flex: 1;
+  }

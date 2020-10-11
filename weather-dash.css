@@ -17,7 +17,9 @@ header {
 }
 
 .five-day {
-    padding:20px;
+    padding:10px;    
+    display:flex;
+    justify-content:space-around;
 }
 
 .main-body{
@@ -26,12 +28,26 @@ header {
 }
 
 .current{
-    padding:20px;
+    padding:20px 0px 0px 10px;
 }
+.pad-left{
+    padding-left:10px;
+}
+.twenty img{
+    border: none;
+  }
 
+.eighty {
+    max-width:400px;
+
+}
 .card {
     display: flex;
     flex: 1;
-    min-width:200px;
-    max-width:200px;
+    min-width:150px;
+    max-width:175px;
+    margin-bottom:20px;
   }
+.card-body {
+    padding:0px 10px;
+}

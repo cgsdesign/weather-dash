@@ -38,7 +38,7 @@ var dailyEl = function(data){
     dayDetails.innerHTML = "<h4>Tomorrow</h4><p><b>Temp in Far:</b> " +data.daily[i].temp.day+"</p><p> <b>Wind Speed MPH:</b> " +data.daily[i].wind_speed + "</p><p> <b>Weather:</b> " + data.daily[i].weather[0].description + "</p><p><b>Humidity:</b> " +data.daily[i].humidity+"</p>";
     //if/else uv.classList = "list-item flex-row justify-space-between align-center";
     clear.append(dayDetails)
-    var dayIcon = document.createElement("img");
+    var dayIcon = document.createElement("img");//create image element
     dayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png")
     clear.append(dayIcon)//icon added
 
@@ -58,6 +58,8 @@ var InputCurrentWeather = function(data,city){
     cityEl.innerHTML = city
     var tempCur = document.querySelector(".stats");
   tempCur.innerHTML = "Temperature in Farenheit: " +data.main.temp+"<br> Wind Speed MPH: " +data.wind.speed + "<br> Weather: " + data.weather[0].description;
+  var currentIcon = document.getElementById("weather-icon");
+  currentIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png")
   }
 
 //most info via lat lon pull

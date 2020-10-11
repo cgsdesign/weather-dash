@@ -17,13 +17,47 @@ var tempCur = document.querySelector(".stats");
 
 //api.openweathermap.org/data/2.5/forecast?q={city-nameEl}&appid=652c40e17c760d30cfab1ca9c73642ff
 
-
 //"https://api.openweathermap.org/data/2.5/onecall?lat="+latEl+"&lon="+lonEl+"&exclude=hourly,minitely,alerts&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
 //
+//look up switchcase logic
+
+    // var dayEl=[
+    //     document.getElementById("day-1"),
+    //     document.getElementById("day-2"),
+    //     document.getElementById("day-3"),
+    //     document.getElementById("day-4"),
+    //     document.getElementById("day-5"),
+    // ]
+
+var dailyEl = function(data){
+
+    for(i=1;i<=5;i++){
+    var clear = document.getElementById(`day-${[i]}`)//remove old info
+    clear.innerHTML = ""
+    var dayDetails = document.createElement("div");
+    dayDetails.innerHTML = "<h4>Tomorrow</h4><p><b>Temp in Far:</b> " +data.daily[i].temp.day+"</p><p> <b>Wind Speed MPH:</b> " +data.daily[i].wind_speed + "</p><p> <b>Weather:</b> " + data.daily[i].weather[0].description + "</p><p><b>Humidity:</b> " +data.daily[i].humidity+"</p>";
+    //if/else uv.classList = "list-item flex-row justify-space-between align-center";
+    clear.append(dayDetails)
+    var dayIcon = document.createElement("img");
+    dayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png")
+    clear.append(dayIcon)//icon added
+
+}
+}
+
+var uviEl = function(data){
+    clear = document.getElementById("uv")//remove old UVs
+    clear.innerHTML = ""
+    var uv = document.createElement("div");
+    uv.textContent = "uvi: " + data.current.uvi;
+    //if/else uv.classList = "list-item flex-row justify-space-between align-center";
+    document.getElementById("uv").append(uv)
+}
+
 var InputCurrentWeather = function(data,city){
     cityEl.innerHTML = city
     var tempCur = document.querySelector(".stats");
-  tempCur.innerHTML = "Temp: " +data.main.temp+"<br> Wind Speed: " +data.wind.speed + "<br> Weather: " + data.weather[0].description;
+  tempCur.innerHTML = "Temperature in Farenheit: " +data.main.temp+"<br> Wind Speed MPH: " +data.wind.speed + "<br> Weather: " + data.weather[0].description;
   }
 
 //most info via lat lon pull
@@ -36,9 +70,10 @@ var getViaLatLon = function(url) {
       if (response.ok) {// .ok tells if response was in 200s so it works
         response.json().then(function(data) {
           console.log(data)
-          uv = "uvi: " + data.current.uvi
-          
-          document.getElementById("uv").append(uv)
+          //uvi
+          uviEl(data)
+          //daily
+          dailyEl(data)
         });
 
     } else { 
@@ -55,7 +90,7 @@ var getViaLatLon = function(url) {
 
 var getWeather = function(local) {
     // format the weather api url
-    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityNameEl.value + "&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial"
+    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityNameEl.value + "&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
     latEl=""
     lonEl=""
     // make a request to the url

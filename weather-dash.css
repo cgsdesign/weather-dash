@@ -26,7 +26,10 @@ header {
     display:flex;
     flex-direction:column;
 }
-
+.date {
+ font-size:18px;
+    text-align:center;
+}
 .current{
     padding:20px 0px 0px 10px;
 }
@@ -47,6 +50,7 @@ header {
     min-width:150px;
     max-width:175px;
     margin-bottom:20px;
+    background: lightgray;
   }
 .card-body {
     padding:0px 10px;

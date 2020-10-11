@@ -31,18 +31,29 @@ var tempCur = document.querySelector(".stats");
 
 var dailyEl = function(data){
 
+    crrtDateGiv = parseInt(data.daily[0].dt+"000")//date works!!!
+    console.log(crrtDateGiv)
+    crrtDateWant = new Date(crrtDateGiv).toDateString()
+    console.log(crrtDateWant)
+    var crrtDateFini = document.getElementById(`date`)//find id
+    crrtDateFini.textContent=crrtDateWant
+
+
     for(i=1;i<=5;i++){
     var clear = document.getElementById(`day-${[i]}`)//remove old info
     clear.innerHTML = ""
 
+    //5 dates
     dateGiv = parseInt(data.daily[i].dt+"000")//date works!!!
     console.log(dateGiv)
-
     dateWant = new Date(dateGiv).toDateString()
     console.log(dateWant)
+    var dateFini = document.getElementById(`date-${[i]}`)//find id
+    dateFini.textContent=dateWant
 
+    //weather details
     var dayDetails = document.createElement("div");
-    dayDetails.innerHTML = "<h4>Tomorrow</h4><p><b>Temp in Far:</b> " +data.daily[i].temp.day+"</p><p> <b>Wind Speed MPH:</b> " +data.daily[i].wind_speed + "</p><p> <b>Weather:</b> " + data.daily[i].weather[0].description + "</p><p><b>Humidity:</b> " +data.daily[i].humidity+"</p>";
+    dayDetails.innerHTML = "<p><b>Temp in Far:</b> " +data.daily[i].temp.day+"</p><p> <b>Wind Speed MPH:</b> " +data.daily[i].wind_speed + "</p><p> <b>Weather:</b> " + data.daily[i].weather[0].description + "</p><p><b>Humidity:</b> " +data.daily[i].humidity+"</p>";
     //if/else uv.classList = "list-item flex-row justify-space-between align-center";
     clear.append(dayDetails)
     var dayIcon = document.createElement("img");//create image element
@@ -138,36 +149,21 @@ var getWeather = function(local) {
       getWeather(cityname)
       //add function to add city into past city logs
       cityNameEl.value = ""//reset value to none after running search
+      pastCity(cityname)
     }
     else {
       alert("Please enter a city name.")
     }
   }
- addDates= function(){
-    var apiUrl = "http://api.openweathermap.org/data/2.5/forecast/hourly?" + cityNameEl.value + "&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
-    // make a request to the url
-    fetch(apiUrl)
-    .then(function(response) {
-      // request was successful
-      if (response.ok) {// .ok tells if response was in 200s so it works
-        response.json().then(function(data) {
-          console.log(data)
-        });
+
+ function pastCity(city) {
+    var liEl = document.createElement("li")
+    var text = city;
+    liEl.textContent = text;
+    var historyEl = document.querySelector('#city-list');
+    historyEl.onclick = function(){
     }
-})
- }
- //addDates()
-//     for(i=1;i<=5;i++){
-//         var date = document.getElementById(`date-${[i]}`)//find id
-//         date.textContent=dateEl
-//         console.log(dateEl)
-// }
-//}
-//addDates()
-
-
-date = new Date(1602435600000).toDateString()
-console.log(date)
-
+    historyEl.appendChild(liEl);
+  };
 
 enterCityFm.addEventListener("submit", formSubmitHandler)

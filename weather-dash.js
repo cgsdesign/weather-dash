@@ -2,7 +2,7 @@
 //make HTML page outline ^.^
 //set up on click response for city ^.^
 //set up cards (bootstrap) ^.^
-//set up weather API
+//set up weather API ^.^
     //to fetch:
     // city name, date & 
     // Current: wather condition (icon/image) temp, humidity, wind speed, UV(color coded)
@@ -10,20 +10,39 @@
 // city added to search history   
 var cityNameEl = document.querySelector("#city-name-input");
 var enterCityFm = document.querySelector("#enter-city");
+var cityListEl = document.querySelector("#city-list");
+var currentWeatherContainerEl = document.querySelector("#current");
+var cityEl = document.querySelector("#city");
+var tempCur = document.querySelector(".stats");
+
 //api.openweathermap.org/data/2.5/forecast?q={city-nameEl}&appid=652c40e17c760d30cfab1ca9c73642ff
 
-var getWeather = function(local) {
-    // format the weather api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityNameEl.value + "&appid=652c40e17c760d30cfab1ca9c73642ff"
+
+//"https://api.openweathermap.org/data/2.5/onecall?lat="+latEl+"&lon="+lonEl+"&exclude=hourly,minitely,alerts&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
+//
+var InputCurrentWeather = function(data,city){
+    cityEl.innerHTML = city
+    var tempCur = document.querySelector(".stats");
+  tempCur.innerHTML = "Temp: " +data.main.temp+"<br> Wind Speed: " +data.wind.speed + "<br> Weather: " + data.weather[0].description;
+  }
+
+//most info via lat lon pull
+var getViaLatLon = function(url) {
     // make a request to the url
-    fetch(apiUrl)
+    console.log(url)
+    fetch(url)
     .then(function(response) {
       // request was successful
       if (response.ok) {// .ok tells if response was in 200s so it works
         response.json().then(function(data) {
-          console.log(data, local);
-        });// ask TA how to check if response =wrong
-      } else { // alerts that there was a404 etc.
+          console.log(data)
+          uv = "uvi: " + data.current.uvi
+          
+          document.getElementById("uv").append(uv)
+        });
+
+    } else { 
+        // alerts that there was a404 etc. - Also says if city is not real ^.^
         alert("Error: " + response.statusText);
       }
     })
@@ -32,6 +51,38 @@ var getWeather = function(local) {
       alert("Unable to connect to Weather Tracker");
     });
   };
+
+
+var getWeather = function(local) {
+    // format the weather api url
+    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityNameEl.value + "&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial"
+    latEl=""
+    lonEl=""
+    // make a request to the url
+    fetch(apiUrl)
+    .then(function(response) {
+      // request was successful
+      if (response.ok) {// .ok tells if response was in 200s so it works
+        response.json().then(function(data) {
+          InputCurrentWeather(data,local);
+          latEl = data.coord.lat
+          lonEl = data.coord.lon
+          console.log(data)
+          var apiUrlTwo = "https://api.openweathermap.org/data/2.5/onecall?lat="+latEl+"&lon="+lonEl+"&exclude=hourly,minutely,alerts&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
+          getViaLatLon(apiUrlTwo)
+        });
+
+    } else { 
+        // alerts that there was a404 etc. - Also says if city is not real ^.^
+        alert("Error: " + response.statusText);
+      }
+    })
+    .catch(function(error) {
+      // Notice this `.catch()` getting chained onto the end of the `.then()` method - for no internet conection
+      alert("Unable to connect to Weather Tracker");
+    });
+  };
+
 
   var formSubmitHandler = function() {
     //prevent blank entry

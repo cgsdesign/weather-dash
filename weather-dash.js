@@ -161,8 +161,16 @@ var getWeather = function(local) {
     var text = city;
     liEl.textContent = text;
     var historyEl = document.querySelector('#city-list');
+    //make active link
     historyEl.onclick = function(){
+        console.log("I am clicked")
+        console.log(event.target.textContent)
+        var ElToEnter = event.target.textContent
+        console.log(ElToEnter)
+        cityNameEl.value = ElToEnter
+        getWeather(ElToEnter)
     }
+    //add list to site
     historyEl.appendChild(liEl);
   };
 

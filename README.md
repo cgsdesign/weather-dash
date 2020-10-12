@@ -20,9 +20,7 @@
 * Barlow Condensed font by Jeremy Tribby hosted by Google Fonts.
 * Photo from Pexels
 * Header Photo by Lisa Fotios from Pexels
-​
-​References: 
-​License text curtasy of https://choosealicense.com/licenses/mit/
+* License text curtasy of https://choosealicense.com/licenses/mit/
 ​
 ​
 ## License

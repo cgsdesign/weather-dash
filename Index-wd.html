@@ -11,7 +11,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="./weather-dash.css">
+        <link rel="stylesheet" href="./assets/css/weather-dash.css">
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
 
     </head>
@@ -45,7 +45,9 @@
                             <div class="stats"></div>
                             <div id="uv"></div>
                         </div>
-                        <img class="twenty" id="weather-icon">
+                        <div class="twenty">
+                            <img id="weather-icon">
+                        </div>
                     </div>
 
                     <br><h2>5 Day Forcast</h2><br>
@@ -90,7 +92,6 @@
                 </div>
             </div>
         </main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-        <script src="./weather-dash.js" async defer></script>
+        <script src="./assets/js/weather-dash.js" async defer></script>
     </body>
 </html>

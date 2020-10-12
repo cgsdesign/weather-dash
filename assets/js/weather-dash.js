@@ -45,7 +45,7 @@ var dailyEl = function(data){
 
     //weather details
     var dayIcon = document.createElement("img");//create image element
-    dayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png")
+    dayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png")
     dayIcon.setAttribute("class", "icon")
     clear.append(dayIcon)//icon added
     var dayDetails = document.createElement("div");
@@ -80,7 +80,7 @@ var InputCurrentWeather = function(data,city){
     var tempCur = document.querySelector(".stats");
   tempCur.innerHTML = "Temperature in Farenheit: " +data.main.temp+"<br> Wind Speed MPH: " +data.wind.speed + "<br> Weather: " + data.weather[0].description;
   var currentIcon = document.getElementById("weather-icon");
-  currentIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png")
+  currentIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png")
   }
 
 //most info via lat lon pull
@@ -113,7 +113,7 @@ var getViaLatLon = function(url) {
 
 var getWeather = function(local) {
     // format the weather api url
-    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityNameEl.value + "&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityNameEl.value + "&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
     latEl=""
     lonEl=""
     // make a request to the url

@@ -1,5 +1,5 @@
 header {
-    background-image: url('./Header-bg.png');
+    background-image: url('./images/header-bg.png');
     padding:20px;
 }
 h1 {
@@ -31,7 +31,8 @@ h2 {
 }
 
 .five-day {
-    padding:10px;    
+    padding:10px;
+    padding-top:20px;    
     display:flex;
     justify-content:space-around;
     background-color: #ededed;

@@ -60,9 +60,6 @@ var dailyEl = function(data){
     dayDetails.innerHTML = "<p><b>Temp in Far:</b> " +data.daily[i].temp.day+"</p><p> <b>Wind Speed MPH:</b> " +data.daily[i].wind_speed + "</p><p> <b>Weather:</b> " + data.daily[i].weather[0].description + "</p><p><b>Humidity:</b> " +data.daily[i].humidity+"</p>";
     //if/else uv.classList = "list-item flex-row justify-space-between align-center";
     clear.append(dayDetails)
-    var dayIcon = document.createElement("img");//create image element
-    dayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png")
-    clear.append(dayIcon)//icon added
 
 }
 }

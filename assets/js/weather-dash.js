@@ -8,6 +8,7 @@
     // Current: wather condition (icon/image) temp, humidity, wind speed, UV(color coded)
     //5 day: weather, wind spd, humidity, temp
 // city added to search history   
+
 var cityNameEl = document.querySelector("#city-name-input");
 var enterCityFm = document.querySelector("#enter-city");
 var cityListEl = document.querySelector("#city-list");
@@ -15,19 +16,10 @@ var currentWeatherContainerEl = document.querySelector("#current");
 var cityEl = document.querySelector("#city");
 var tempCur = document.querySelector(".stats");
 
-//api.openweathermap.org/data/2.5/forecast?q={city-nameEl}&appid=652c40e17c760d30cfab1ca9c73642ff
-
+//api testers:
+//https://api.openweathermap.org/data/2.5/forecast?q={city-nameEl}&appid=652c40e17c760d30cfab1ca9c73642ff
 //"https://api.openweathermap.org/data/2.5/onecall?lat="+latEl+"&lon="+lonEl+"&exclude=hourly,minitely,alerts&appid=652c40e17c760d30cfab1ca9c73642ff&units=imperial"
-//
 //look up switchcase logic
-
-    // var dayEl=[
-    //     document.getElementById("day-1"),
-    //     document.getElementById("day-2"),
-    //     document.getElementById("day-3"),
-    //     document.getElementById("day-4"),
-    //     document.getElementById("day-5"),
-    // ]
 
 var dailyEl = function(data){
 

@@ -72,6 +72,16 @@ var uviEl = function(data){
     clear.innerHTML = ""
     var uv = document.createElement("div");
     uv.textContent = "uvi: " + data.current.uvi;
+    uvVal = data.current.uvi
+    if (uvVal <=2){
+      uv.setAttribute("class", "uvi-low")
+    }
+    else if (uvVal >2 || uvVal<6){
+      uv.setAttribute("class", "uvi-med")
+    }
+    else{
+      uv.setAttribute("class", "uvi-high")
+    }
     //if/else uv.classList = "list-item flex-row justify-space-between align-center";
     document.getElementById("uv").append(uv)
 }

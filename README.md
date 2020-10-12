@@ -4,10 +4,10 @@
 
 ### Live site at [Weather Dash](https://cgsdesign.github.io/weather-dash/)
 ​
-​For this project I created a webpage that displays current weather and a 5 day forcast for various city's around the world. I used OpenWeatherAPI to collect the data I needed. The page is designed to be visualy enticing and encourage the user to get outside and consider traveling.
+​For this project I created a webpage that displays current weather and a 5 day forecast for various city's around the world. I used OpenWeatherAPI to collect the data I needed. The page is designed to be visually enticing and encourage the user to get outside and consider traveling.
 
 ## Key Features
-* daily fortcasts based on city inputs
+* daily forecasts based on city inputs
 * weather icons and bright design targeting young travelers
 * fully responsive design
 * past city lookups to make searching easier

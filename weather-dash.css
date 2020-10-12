@@ -1,8 +1,21 @@
 header {
-    background: lightgrey;
+    background-image: url('./Header-bg.png');
     padding:20px;
 }
-
+h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+    font-size: 48px;
+}
+h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px;
+}
+.icon {
+    max-width:50px;
+    max-height:50px;
+    align: center;
+}
 .hide-toggle {
     display: none;
 }
@@ -10,6 +23,7 @@ header {
 .left-colomn {
     background:orange;
     padding-top:20px;
+    padding:20px;
 }
 
 .left-colomn li{
@@ -20,6 +34,7 @@ header {
     padding:10px;    
     display:flex;
     justify-content:space-around;
+    background-color: #ededed;
 }
 
 .main-body{
@@ -42,7 +57,6 @@ header {
 
 .eighty {
     max-width:400px;
-
 }
 .card {
     display: flex;
@@ -50,8 +64,41 @@ header {
     min-width:150px;
     max-width:175px;
     margin-bottom:20px;
-    background: lightgray;
+    background: white;
   }
 .card-body {
     padding:0px 10px;
+}
+
+.city-btn {
+    background:white;
+    font-family: 'Barlow Condensed', sans-serif;   
+    font-size: 18px;
+    list-style-type: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 100px;
+    line-height: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.uvi-low {
+    background:green;
+    padding:5px;
+    color:white;
+    border-radius: 5px;
+}
+
+.uvi-med {
+    background:orange;
+    padding:5px;
+    color:white;
+    border-radius: 5px;
+}
+.uvi-high {
+    background:red;
+    padding:5px;
+    color:white;
+    border-radius: 5px;
 }
